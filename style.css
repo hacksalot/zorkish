@@ -293,6 +293,11 @@ body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */ }
 
+#masthead {
+  color: #BCBCBC;
+  background-color: #232323;
+  padding: 1em; }
+
 blockquote, q {
   quotes: "" ""; }
   blockquote:before, blockquote:after, q:before, q:after {
@@ -412,6 +417,13 @@ a {
     outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
+
+#masthead a {
+  text-decoration: none; }
+  #masthead a, #masthead a:visited {
+    color: #BCBCBC; }
+  #masthead a:hover {
+    color: #DEDEDE; }
 
 /*--------------------------------------------------------------
 ## Menus

@@ -17,3 +17,13 @@ a {
 		outline: 0;
 	}
 }
+
+#masthead a {
+  &, &:visited {
+    color: $color__link-header;
+  }
+  &:hover {
+    color: $color__link-header-hover;
+  }
+  text-decoration: none;
+}
