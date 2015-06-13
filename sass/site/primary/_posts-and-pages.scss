@@ -6,6 +6,14 @@
 	margin: 0 0 1.5em;
 }
 
+.home .hentry {
+  width: 98%;
+  height: 350px;
+  margin: 1% 0 0 1%;
+  float: left;
+  overflow: hidden;
+}
+
 .byline,
 .updated:not(.published){
 	display: none;

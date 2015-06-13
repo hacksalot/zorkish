@@ -41,6 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Responsive
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
@@ -589,6 +590,13 @@ a {
 .hentry {
   margin: 0 0 1.5em; }
 
+.home .hentry {
+  width: 98%;
+  height: 350px;
+  margin: 1% 0 0 1%;
+  float: left;
+  overflow: hidden; }
+
 .byline,
 .updated:not(.published) {
   display: none; }
@@ -698,5 +706,29 @@ object {
 
 .gallery-caption {
   display: block; }
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+@media screen and (min-width: 640px) {
+  .home .hentry {
+    width: 48.5%;
+    height: 350px;
+    margin: 1% 0 0 1%; } }
+@media screen and (min-width: 1024px) {
+  .home .hentry {
+    width: 32%;
+    height: 350px;
+    margin: 1% 0 0 1%; } }
+@media screen and (min-width: 1200px) {
+  .home .hentry {
+    width: 23.75%;
+    height: 350px;
+    margin: 1% 0 0 1%; } }
+@media screen and (min-width: 1600px) {
+  .home .hentry {
+    width: 18.8%;
+    height: 350px;
+    margin: 1% 0 0 1%; } }
 
 /*# sourceMappingURL=style.css.map */

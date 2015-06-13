@@ -1,0 +1,31 @@
+@media screen and (min-width: 640px) {
+  .home .hentry {
+    width: 48.5%;
+    height: 350px;
+    margin: 1% 0 0 1%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home .hentry {
+    width: 32%;
+    height: 350px;
+    margin: 1% 0 0 1%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .home .hentry {
+    width: 23.75%;
+    height: 350px;
+    margin: 1% 0 0 1%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .home .hentry {
+    width: 18.8%;
+    height: 350px;
+    margin: 1% 0 0 1%;
+  }
+}
