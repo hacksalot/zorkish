@@ -14,6 +14,18 @@
   overflow: hidden;
 }
 
+.single, .page, .archive  {
+  #content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .hentry {
+    font-size: 1.25em;  
+  }
+}
+
 .byline,
 .updated:not(.published){
 	display: none;

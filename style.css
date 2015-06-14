@@ -3,7 +3,7 @@ Theme Name: Zorkish
 Theme URI: http://underscores.me/
 Author: gruebait
 Author URI: http://eatenbygrues.com
-Description: A subterranean theme for WordPress. Torch not included.
+Description: A subterranean theme for Wordpress. Torch not included.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -231,13 +231,17 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "Noto Serif", serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
+
+.single .entry-title, .page .entry-title, .archive .entry-title {
+  font-size: 52px;
+  font-size: 3.25rem; }
 
 p {
   margin-bottom: 1.5em; }
@@ -259,13 +263,10 @@ pre {
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
-  overflow: auto;
-  padding: 1.6em; }
+  overflow: auto; }
 
 code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem; }
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
 abbr, acronym {
   border-bottom: 1px dotted #666;
@@ -295,7 +296,6 @@ body {
   /* Fallback for when there is no custom background color defined. */ }
 
 #masthead {
-  color: #BCBCBC;
   background-color: #232323;
   padding: 1em; }
 
@@ -311,7 +311,7 @@ hr {
   margin-bottom: 1.5em; }
 
 ul, ol {
-  margin: 0 0 1.5em 3em; }
+  margin: 0 0 1.5em 1em; }
 
 ul {
   list-style: disc; }
@@ -425,6 +425,10 @@ a {
     color: #BCBCBC; }
   #masthead a:hover {
     color: #DEDEDE; }
+
+.entry-title > a {
+  text-decoration: none;
+  color: #232323; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -596,6 +600,14 @@ a {
   margin: 1% 0 0 1%;
   float: left;
   overflow: hidden; }
+
+.single #content, .page #content, .archive #content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em; }
+.single .hentry, .page .hentry, .archive .hentry {
+  font-size: 1.25em; }
 
 .byline,
 .updated:not(.published) {
