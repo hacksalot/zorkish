@@ -6,16 +6,19 @@ See: https://jetpack.me/
 */
 
 /**
-Add theme support for Infinite Scroll.
-See: https://jetpack.me/support/infinite-scroll/
+Add theme support for Site Logo and Infinite Scroll.
+http://jetpack.me/support/site-logo/
+http://jetpack.me/support/infinite-scroll/
 */
-function zorkish_jetpack_setup() {
+function zorkish_jetpack_setup()
+{
+  add_theme_support( 'site-logo' );
   add_theme_support( 'infinite-scroll', array(
     'container' => 'main',
     'render'    => 'zorkish_infinite_scroll_render',
     'footer'    => 'page',
   ) );
-} // end function zorkish_jetpack_setup
+}
 add_action( 'after_setup_theme', 'zorkish_jetpack_setup' );
 
 /**
