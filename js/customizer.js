@@ -33,4 +33,20 @@
 			}
 		} );
 	} );
+	wp.customize( 'header_byline_color', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( '.site-description' ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( '.site-description' ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );  
 } )( jQuery );
