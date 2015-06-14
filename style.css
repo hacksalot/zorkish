@@ -304,7 +304,8 @@ body {
 
 #main {
   float: left;
-  margin-bottom: 3em; }
+  margin-bottom: 3em;
+  width: 100%; }
 
 #masthead {
   background-color: #232323;
