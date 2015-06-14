@@ -1,15 +1,14 @@
 <?php
 /**
- * The sidebar containing the main widget area.
- *
- * @package Zorkish
- */
+The sidebar containing the main widget area.
+@package Zorkish
+*/
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
+  return;
 }
 ?>
 
 <div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+  <?php dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
