@@ -6,7 +6,7 @@
   margin: 0 0 1.5em;
 }
 
-.home .hentry {
+.home .hentry, .archive .hentry {
   width: 98%;
   height: 350px;
   margin: 1% 0 0 1%;
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.single, .page, .archive  {
+.single, .page {
   #content {
     max-width: 900px;
     margin: 0 auto;

@@ -2,7 +2,7 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
-.single, .page, .archive {
+.single, .page {
   .entry-title {
     @include font-size(3.25);
   }
@@ -10,4 +10,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .entry-title {
   line-height: 1.25;
+}
+
+.archive .page-header {
+  background-color: gold;
+  padding-left: 1em;
+  .page-title {
+    margin-top: 0;
+  }
 }

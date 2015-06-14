@@ -16,6 +16,11 @@ body {
   background: $color__background-body; 
 }
 
+#main {
+  float: left; // Let it expand with its floated children
+  margin-bottom: 3em;
+}
+
 #masthead {
   background-color: $color__background-header;
   padding: 1em;

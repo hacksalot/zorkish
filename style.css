@@ -239,12 +239,18 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
-.single .entry-title, .page .entry-title, .archive .entry-title {
+.single .entry-title, .page .entry-title {
   font-size: 52px;
   font-size: 3.25rem; }
 
 .entry-title {
   line-height: 1.25; }
+
+.archive .page-header {
+  background-color: gold;
+  padding-left: 1em; }
+  .archive .page-header .page-title {
+    margin-top: 0; }
 
 p {
   margin-bottom: 1.5em; }
@@ -295,6 +301,10 @@ html {
 
 body {
   background: #fff; }
+
+#main {
+  float: left;
+  margin-bottom: 3em; }
 
 #masthead {
   background-color: #232323;
@@ -607,19 +617,19 @@ a {
 .hentry {
   margin: 0 0 1.5em; }
 
-.home .hentry {
+.home .hentry, .archive .hentry {
   width: 98%;
   height: 350px;
   margin: 1% 0 0 1%;
   float: left;
   overflow: hidden; }
 
-.single #content, .page #content, .archive #content {
+.single #content, .page #content {
   max-width: 900px;
   margin: 0 auto;
   padding-left: 1em;
   padding-right: 1em; }
-.single .hentry, .page .hentry, .archive .hentry {
+.single .hentry, .page .hentry {
   font-size: 1.25em; }
 
 .byline,
@@ -726,22 +736,22 @@ object {
 # Responsive
 --------------------------------------------------------------*/
 @media screen and (min-width: 640px) {
-  .home .hentry {
+  .home .hentry, .archive .hentry {
     width: 48.5%;
     height: 350px;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1024px) {
-  .home .hentry {
+  .home .hentry, .archive .hentry {
     width: 32%;
     height: 350px;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1200px) {
-  .home .hentry {
+  .home .hentry, .archive .hentry {
     width: 23.75%;
     height: 350px;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1600px) {
-  .home .hentry {
+  .home .hentry, .archive .hentry {
     width: 18.8%;
     height: 350px;
     margin: 1% 0 0 1%; } }
