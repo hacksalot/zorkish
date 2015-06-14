@@ -16,6 +16,34 @@ function zorkish_customize_register( $wp_customize ) {
   $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
+  // Add a custom Customizer section
+  $wp_customize->add_section( 'custom_favicon', array(
+    'title' => __( 'Favicon' ),
+    'description' => __( 'Set up your site\'s favicon.' ),
+    'panel' => '', // Not typically needed.
+    'priority' => 160,
+    'capability' => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+  ));
+
+  // Create a setting + control for the site favicons setup
+  $wp_customize->add_setting( 'favicon_links', array(
+      'default' => ''
+  ) );
+  $wp_customize->add_control( 'favicon_links', array(
+      'type' => 'textarea',
+      'priority' => 10, // Within the section.
+      'section' => 'custom_favicon', // Required, core or custom.
+      'label' => __( 'Favicon Links' ),
+      'description' => __( 'Add your favicon links here.' ),
+      'input_attrs' => array(
+          'class' => 'my-custom-class-for-js',
+          'style' => 'border: 1px solid #900',
+          'placeholder' => __( 'Add your favicon links here.' ),
+      ),
+      //'active_callback' => 'is_front_page',
+  ) );
+
   // Create a setting + control for the site byline color
   $wp_customize->add_setting( 'header_byline_color', array(
       'default' => '#DDAE4F',
