@@ -27,20 +27,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Elements
 # Forms
 # Navigation
-	## Links
-	## Menus
+  ## Links
+  ## Menus
 # Accessibility
 # Alignments
 # Clearings
 # Widgets
 # Content
     ## Posts and pages
-	## Asides
-	## Comments
+  ## Asides
+  ## Comments
 # Infinite scroll
 # Media
-	## Captions
-	## Galleries
+  ## Captions
+  ## Galleries
 # Responsive
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -309,6 +309,13 @@ hr {
   border: 0;
   height: 1px;
   margin-bottom: 1.5em; }
+
+/**
+Automatically hide the site-title if site-logo is added
+Note: you can replace the important tag with more specific selector
+*/
+body.has-site-logo .site-title, body.has-site-logo .site-description {
+  display: none !important; }
 
 ul, ol {
   margin: 0 0 1.5em 1em; }

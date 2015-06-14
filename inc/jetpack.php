@@ -12,7 +12,10 @@ http://jetpack.me/support/infinite-scroll/
 */
 function zorkish_jetpack_setup()
 {
-  add_theme_support( 'site-logo' );
+  add_theme_support( 'site-logo', array(
+    'header-text' => array('site-title','site-description'),
+    'size' => 'site-logo' 
+  )); 
   add_theme_support( 'infinite-scroll', array(
     'container' => 'main',
     'render'    => 'zorkish_infinite_scroll_render',

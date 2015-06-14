@@ -22,14 +22,12 @@ Displays all of the <head> section and everything up till <div id="content">
 
   <header id="masthead" class="site-header" role="banner">
     <div class="site-branding">
-      <? if ( function_exists( 'jetpack_the_site_logo' ) ) : ?>
-        <? jetpack_the_site_logo(); ?>
-      <? else: ?>
-        <h1 class="site-title">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        </h1>
-        <h2 class="site-description" style="color: <?php echo get_theme_mod( 'header_byline_color', '#DDAE4F' ) ?>"><?php bloginfo( 'description' ); ?></h2>      
-      <? endif; ?>
+
+      <? if ( function_exists( 'jetpack_the_site_logo' ) )
+           jetpack_the_site_logo(); ?>
+      <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+      <h2 class="site-description" style="color: <?php echo get_theme_mod( 'header_byline_color', '#DDAE4F' ) ?>"><?php bloginfo( 'description' ); ?></h2>      
+
       <?php if ( get_header_image() ) : ?>
         <img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
       <?php endif; ?>

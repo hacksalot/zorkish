@@ -33,6 +33,16 @@ hr {
   margin-bottom: 1.5em;
 }
 
+/**
+Automatically hide the site-title if site-logo is added
+Note: you can replace the important tag with more specific selector
+*/
+body.has-site-logo { 
+  .site-title, .site-description {
+    display: none !important;
+  }
+}
+
 @import "lists";
 
 img {
