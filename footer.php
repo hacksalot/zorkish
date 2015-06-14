@@ -1,7 +1,7 @@
 <?php
 /**
 The template for displaying the footer.
-Contains the closing of the #content div and all content after
+Contains the closing of the #content div and all content after.
 @package Zorkish
 */
 
@@ -11,9 +11,7 @@ Contains the closing of the #content div and all content after
 
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info">
-      <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zorkish' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'zorkish' ), 'WordPress' ); ?></a>
-      <span class="sep"> | </span>
-      <?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'zorkish' ), 'zorkish', '<a href="http://eatenbygrues.com" rel="designer">gruebait</a>' ); ?>
+      <span>Copyright &copy; 2015 | EatenByGrues.com | All Rights Reserved</span>
     </div><!-- .site-info -->
   </footer><!-- #colophon -->
 </div><!-- #page -->
