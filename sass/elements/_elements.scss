@@ -2,14 +2,18 @@ html {
   box-sizing: border-box;
 }
 
+// Inherit box-sizing to make it easier to change the property for components 
+// that leverage other behavior.
+// http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*:after { 
   box-sizing: inherit;
 }
 
 body {
-  background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+  // Fallback for when there is no custom background color defined.
+  background: $color__background-body; 
 }
 
 #masthead {
@@ -33,10 +37,9 @@ hr {
   margin-bottom: 1.5em;
 }
 
-/**
-Automatically hide the site-title if site-logo is added
-Note: you can replace the important tag with more specific selector
-*/
+
+// Automatically hide the site-title if site-logo is added
+// Note: you can replace the important tag with more specific selector
 body.has-site-logo { 
   .site-title, .site-description {
     display: none !important;
@@ -46,8 +49,13 @@ body.has-site-logo {
 @import "lists";
 
 img {
-  height: auto; /* Make sure images are scaled correctly. */
-  max-width: 100%; /* Adhere to container width. */
+  height: auto; // Make sure images are scaled correctly
+  max-width: 100%; // Adhere to container width
 }
 
 @import "tables";
+
+#colophon {
+  padding: 1em;
+  background-color: $color__background-header;
+}

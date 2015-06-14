@@ -18,7 +18,7 @@ a {
   }
 }
 
-#masthead a {
+#masthead a, #colophon a {
   &, &:visited {
     color: $color__link-header;
   }
@@ -30,5 +30,13 @@ a {
 
 .entry-title > a {
   text-decoration: none;
+  color: #232323;
+}
+
+.tags-links > a {
+  border: 1px solid #ABABAB;
+  padding: 4px;
+  text-decoration: none;
+  background-color: #FFFDE0;
   color: #232323;
 }

@@ -243,6 +243,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 52px;
   font-size: 3.25rem; }
 
+.entry-title {
+  line-height: 1.25; }
+
 p {
   margin-bottom: 1.5em; }
 
@@ -288,12 +291,10 @@ html {
 *,
 *:before,
 *:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit; }
 
 body {
-  background: #fff;
-  /* Fallback for when there is no custom background color defined. */ }
+  background: #fff; }
 
 #masthead {
   background-color: #232323;
@@ -310,10 +311,6 @@ hr {
   height: 1px;
   margin-bottom: 1.5em; }
 
-/**
-Automatically hide the site-title if site-logo is added
-Note: you can replace the important tag with more specific selector
-*/
 body.has-site-logo .site-title, body.has-site-logo .site-description {
   display: none !important; }
 
@@ -339,13 +336,15 @@ dd {
 
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */ }
+  max-width: 100%; }
 
 table {
   margin: 0 0 1.5em;
   width: 100%; }
+
+#colophon {
+  padding: 1em;
+  background-color: #232323; }
 
 /*--------------------------------------------------------------
 # Forms
@@ -426,15 +425,22 @@ a {
   a:hover, a:active {
     outline: 0; }
 
-#masthead a {
+#masthead a, #colophon a {
   text-decoration: none; }
-  #masthead a, #masthead a:visited {
+  #masthead a, #masthead a:visited, #colophon a, #colophon a:visited {
     color: #BCBCBC; }
-  #masthead a:hover {
+  #masthead a:hover, #colophon a:hover {
     color: #DEDEDE; }
 
 .entry-title > a {
   text-decoration: none;
+  color: #232323; }
+
+.tags-links > a {
+  border: 1px solid #ABABAB;
+  padding: 4px;
+  text-decoration: none;
+  background-color: #FFFDE0;
   color: #232323; }
 
 /*--------------------------------------------------------------
