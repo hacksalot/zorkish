@@ -17,23 +17,31 @@ Template part for displaying posts.
   </header><!-- .entry-header -->
 
   <div class="entry-content">
-    <?php
+  
+    <? 
+    if (!is_single()) {
+      the_excerpt();
+    }
+    else {
       // translators: %s: Name of current post
       the_content( sprintf(
         wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'zorkish' ), array( 'span' => array( 'class' => array() ) ) ),
         the_title( '<span class="screen-reader-text">"', '"</span>', false )
       ) );
+    }
     ?>
 
     <?php
-      wp_link_pages( array(
-        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zorkish' ),
-        'after'  => '</div>',
-      ) );
+      if(is_single()) {
+        wp_link_pages( array(
+          'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zorkish' ),
+          'after'  => '</div>',
+        ) );
+      }
     ?>
   </div><!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php zorkish_entry_footer(); ?>
+    <?php if(is_single()) zorkish_entry_footer(); ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->
