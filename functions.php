@@ -112,6 +112,14 @@ function zorkish_scripts() {
 add_action( 'wp_enqueue_scripts', 'zorkish_scripts' );
 
 /**
+Set the length of auto-generated excerpts.
+*/
+function zorkish_excerpt_length( $length ) {
+  return 25;
+}
+add_filter( 'excerpt_length', 'zorkish_excerpt_length', 999 );
+
+/**
 Implement the Custom Header feature.
 */
 require get_template_directory() . '/inc/custom-header.php';
