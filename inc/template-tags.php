@@ -106,13 +106,12 @@ if ( ! function_exists( 'zorkish_entry_footer' ) ) :
   function zorkish_entry_footer() {
     // Hide category and tag text for pages.
     if ( 'post' == get_post_type() ) {
-      /* translators: used between list items, there is a space after the comma */
-      $categories_list = get_the_category_list( __( ', ', 'zorkish' ) );
-      if ( $categories_list && zorkish_categorized_blog() ) {
-        printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'zorkish' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-      }
 
-      /* translators: used between list items, there is a space after the comma */
+      // $categories_list = get_the_category_list( __( ', ', 'zorkish' ) );
+      // if ( $categories_list && zorkish_categorized_blog() ) {
+        // printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'zorkish' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+      // }
+
       $tags_list = get_the_tag_list('', ' ');
       if ( $tags_list ) {
         printf( '<span class="tags-links">' . $tags_list . '</span>'); // WPCS: XSS OK.
