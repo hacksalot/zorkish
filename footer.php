@@ -11,7 +11,7 @@ Contains the closing of the #content div and all content after.
 
   <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info">
-      <span>Copyright &copy; 2015 | EatenByGrues.com | All Rights Reserved</span>
+      <span>Copyright &copy; <? echo date('Y'); ?> | <? echo get_bloginfo('name'); ?> | All Rights Reserved</span>
     </div><!-- .site-info -->
   </footer><!-- #colophon -->
 </div><!-- #page -->
