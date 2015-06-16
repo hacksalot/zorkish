@@ -52,13 +52,15 @@ a {
 
 .nav-links {
   > div {
+    width: 50%;
     line-height: 36px;
+    border: 2px solid #DFE4E7;
+    overflow: hidden;
+    text-overflow: ellipsis;
     > a {
-      border: 2px solid #DFE4E7;
-      padding: 4px 15px;
+      padding: 4px;
       border-radius: 15px;
       white-space: nowrap;
-      text-overflow: ellipsis;
       &:focus {
         border-color: #232323;
         outline: 0;

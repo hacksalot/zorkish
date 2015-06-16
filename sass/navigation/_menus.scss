@@ -92,13 +92,19 @@
 
   & .nav-previous {
     float: left;
-    width: 50%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right-width: 1px;
+    padding-left: 8px;
   }
 
   & .nav-next {
     float: right;
     text-align: right;
-    width: 50%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;    
+    border-left-width: 1px;
+    padding-right: 8px;
   }
 }
 

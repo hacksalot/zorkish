@@ -245,6 +245,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .home .entry-title, .archive .entry-title {
   margin-bottom: 0; }
+  .home .entry-title > a, .archive .entry-title > a {
+    font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif; }
 .home .entry-content, .archive .entry-content {
   margin-top: 0; }
 
@@ -468,13 +470,15 @@ a {
   color: #232323; }
 
 .nav-links > div {
-  line-height: 36px; }
+  width: 50%;
+  line-height: 36px;
+  border: 2px solid #DFE4E7;
+  overflow: hidden;
+  text-overflow: ellipsis; }
   .nav-links > div > a {
-    border: 2px solid #DFE4E7;
-    padding: 4px 15px;
+    padding: 4px;
     border-radius: 15px;
-    white-space: nowrap;
-    text-overflow: ellipsis; }
+    white-space: nowrap; }
     .nav-links > div > a:focus {
       border-color: #232323;
       outline: 0; }
@@ -535,13 +539,19 @@ a {
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
-  width: 50%; }
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right-width: 1px;
+  padding-left: 8px; }
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
   float: right;
   text-align: right;
-  width: 50%; }
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left-width: 1px;
+  padding-right: 8px; }
 
 #site-navigation {
   position: absolute;
@@ -649,7 +659,7 @@ a {
 
 .home .hentry, .archive .hentry {
   width: 98%;
-  height: 350px;
+  height: 250px;
   margin: 1% 0 0 1%;
   float: left;
   overflow: hidden; }
@@ -768,22 +778,18 @@ object {
 @media screen and (min-width: 640px) {
   .home .hentry, .archive .hentry {
     width: 48.5%;
-    height: 350px;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1024px) {
   .home .hentry, .archive .hentry {
     width: 32%;
-    height: 350px;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1200px) {
   .home .hentry, .archive .hentry {
     width: 23.75%;
-    height: 350px;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1600px) {
   .home .hentry, .archive .hentry {
     width: 18.8%;
-    height: 350px;
     margin: 1% 0 0 1%; } }
 
 /*# sourceMappingURL=style.css.map */
