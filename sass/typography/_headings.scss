@@ -13,6 +13,9 @@ h1, h2, h3, h4, h5, h6 {
 .home, .archive {
   .entry-title {
     margin-bottom: 0;
+    > a {
+      font-family: $font__archive-title;
+    }
   }
   .entry-content {
     margin-top: 0;
