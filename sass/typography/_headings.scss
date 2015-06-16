@@ -2,9 +2,20 @@ h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
 
+// Larger title font on dedicated article/static pages
 .single, .page {
   .entry-title {
     @include font-size(3.25);
+  }
+}
+
+// Remove margins of title/content on the home and archive pages
+.home, .archive {
+  .entry-title {
+    margin-bottom: 0;
+  }
+  .entry-content {
+    margin-top: 0;
   }
 }
 

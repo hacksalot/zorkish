@@ -243,6 +243,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 52px;
   font-size: 3.25rem; }
 
+.home .entry-title, .archive .entry-title {
+  margin-bottom: 0; }
+.home .entry-content, .archive .entry-content {
+  margin-top: 0; }
+
 .entry-title {
   line-height: 1.25; }
 
