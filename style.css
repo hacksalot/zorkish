@@ -259,7 +259,9 @@ dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em; }
+  margin: 0 1em 0 0;
+  border-left: 5px #D8D8D8 solid;
+  padding-left: 20px; }
 
 address {
   margin: 0 0 1.5em; }
@@ -426,7 +428,8 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: royalblue;
+  text-decoration: none; }
   a:visited {
     color: purple; }
   a:hover, a:focus, a:active {
@@ -449,10 +452,27 @@ a {
 
 .tags-links > a {
   border: 1px solid #ABABAB;
-  padding: 4px;
+  padding: 4px 10px 4px 4px;
   text-decoration: none;
   background-color: #FFFDE0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-size: 50%;
+  font-family: 'Open Sans', Helvetica, 'Segoe UI', sans-serif;
+  font-weight: bold;
   color: #232323; }
+
+.nav-links > div {
+  line-height: 36px; }
+  .nav-links > div > a {
+    border: 2px solid #DFE4E7;
+    padding: 4px 15px;
+    border-radius: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis; }
+    .nav-links > div > a:focus {
+      border-color: #232323;
+      outline: 0; }
 
 /*--------------------------------------------------------------
 ## Menus
@@ -460,8 +480,7 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
-  width: 100%; }
+  float: left; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -518,6 +537,11 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
+
+#site-navigation {
+  position: absolute;
+  left: 400px;
+  top: 90px; }
 
 /*--------------------------------------------------------------
 # Accessibility

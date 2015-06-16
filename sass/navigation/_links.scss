@@ -1,5 +1,6 @@
 a {
   color: $color__link;
+  text-decoration: none;
 
   &:visited {
     color: $color__link-visited;
@@ -33,10 +34,35 @@ a {
   color: #232323;
 }
 
-.tags-links > a {
-  border: 1px solid #ABABAB;
-  padding: 4px;
-  text-decoration: none;
-  background-color: #FFFDE0;
-  color: #232323;
+.tags-links {
+  
+  > a {
+    border: 1px solid #ABABAB;
+    padding: 4px 10px 4px 4px;
+    text-decoration: none;
+    background-color: #FFFDE0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 50%;
+    font-family: 'Open Sans', Helvetica, 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: #232323;
+  }
+}
+
+.nav-links {
+  > div {
+    line-height: 36px;
+    > a {
+      border: 2px solid #DFE4E7;
+      padding: 4px 15px;
+      border-radius: 15px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:focus {
+        border-color: #232323;
+        outline: 0;
+      }
+    }
+  }
 }

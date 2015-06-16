@@ -2,7 +2,6 @@
   clear: both;
   display: block;
   float: left;
-  width: 100%;
 
   ul {
     display: none;
@@ -101,4 +100,10 @@
     text-align: right;
     width: 50%;
   }
+}
+
+#site-navigation {
+  position: absolute;
+  left: 400px;
+  top: 90px;
 }
