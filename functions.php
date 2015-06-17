@@ -130,6 +130,14 @@ function zorkish_scripts() {
 add_action( 'wp_enqueue_scripts', 'zorkish_scripts' );
 
 /**
+Remove WP version number.
+*/
+function zorkish_remove_version() {
+  return '';
+}
+add_filter('the_generator', 'zorkish_remove_version');
+
+/**
 Set the length of auto-generated excerpts.
 */
 function zorkish_excerpt_length( $length ) {
