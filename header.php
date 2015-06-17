@@ -20,7 +20,7 @@ Displays all of the <head> section and everything up till <div id="content">
 <div id="page" class="hfeed site">
   <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'zorkish' ); ?></a>
 
-  <header id="masthead" class="site-header" role="banner">
+  <header id="masthead" class="site-header" role="banner" style="background-color: <?php echo get_theme_mod( 'header_color', '#232323' ); ?>;">
     <div class="site-branding">
 
       <? if ( function_exists( 'jetpack_the_site_logo' ) )

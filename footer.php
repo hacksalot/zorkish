@@ -9,7 +9,7 @@ Contains the closing of the #content div and all content after.
 
   </div><!-- #content -->
 
-  <footer id="colophon" class="site-footer" role="contentinfo">
+  <footer id="colophon" class="site-footer" role="contentinfo" style="background-color: <?php echo get_theme_mod( 'footer_color', '#232323' ); ?>;">
     <div class="site-info">
       <span>Copyright &copy; <? echo date('Y'); ?> | <? echo get_bloginfo('name'); ?> | All Rights Reserved</span>
     </div><!-- .site-info -->
