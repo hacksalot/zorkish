@@ -5,6 +5,22 @@ Zorkish Theme Customizer
 */
 
 /**
+Create a custom color setting for the theme.
+*/
+function create_color_setting( $wp_customize, $name, $label, $default ) {
+  // Create a setting + control for the site byline color
+  $wp_customize->add_setting( $name, array(
+      'default' => $default,
+      'sanitize_callback' => 'sanitize_hex_color',
+      'transport' => 'postMessage',
+  ));
+  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $name, array(
+      'label' => __( $label, 'theme_textdomain' ),
+      'section' => 'colors',
+  )));
+}
+
+/**
 Configure custom theme options.
 @param WP_Customize_Manager $wp_customize Theme Customizer object.
 */
@@ -44,16 +60,9 @@ function zorkish_customize_register( $wp_customize ) {
       //'active_callback' => 'is_front_page',
   ) );
 
-  // Create a setting + control for the site byline color
-  $wp_customize->add_setting( 'header_byline_color', array(
-      'default' => '#DDAE4F',
-      'sanitize_callback' => 'sanitize_hex_color',
-      'transport' => 'postMessage',
-  ) );
-  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_byline_color', array(
-      'label' => __( 'Byline Color', 'theme_textdomain' ),
-      'section' => 'colors',
-  ) ) );
+  create_color_setting( $wp_customize, 'header_color', 'Header Color', '#232323');
+  create_color_setting( $wp_customize, 'footer_color', 'Footer Color', '#232323');
+  create_color_setting( $wp_customize, 'header_byline_color', 'Byline Color', '#DDAE4F');
 }
 add_action( 'customize_register', 'zorkish_customize_register' );
 
