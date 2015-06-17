@@ -14,7 +14,7 @@ function zorkish_jetpack_setup()
 {
   add_theme_support( 'site-logo', array(
     'header-text' => array('site-title','site-description'),
-    'size' => 'site-logo' 
+    'size' => 'full'//'site-logo' 
   )); 
   // add_theme_support( 'infinite-scroll', array(
     // 'container' => 'main',
