@@ -79,13 +79,13 @@ function zorkish_content_width() {
 add_action( 'after_setup_theme', 'zorkish_content_width', 0 );
 
 /**
-Register widget area.
+Register widget areas.
 @link http://codex.wordpress.org/Function_Reference/register_sidebar
 */
 function zorkish_widgets_init() {
   register_sidebar( array(
     'name'          => esc_html__( 'Sidebar', 'zorkish' ),
-    'id'            => 'sidebar-1',
+    'id'            => 'wa-sidebar',
     'description'   => 'The primary site sidebar.',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
@@ -93,14 +93,23 @@ function zorkish_widgets_init() {
     'after_title'   => '</h1>',
   ));
   register_sidebar( array(
-    'name'          => esc_html__( 'Footer', 'zorkish' ),
-    'id'            => 'sidebar-2',
-    'description'   => 'The footer bar.',
+    'name'          => esc_html__( 'Footer (Home)', 'zorkish' ),
+    'id'            => 'wa-footer-home',
+    'description'   => 'The home page footer bar.',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget'  => '</aside>',
     'before_title'  => '<h1 class="widget-title">',
     'after_title'   => '</h1>',
   ));
+  register_sidebar( array(
+    'name'          => esc_html__( 'Footer (Inner)', 'zorkish' ),
+    'id'            => 'wa-footer-inner',
+    'description'   => 'The inner page footer bar.',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+    'before_title'  => '<h1 class="widget-title">',
+    'after_title'   => '</h1>',
+  ));  
 }
 add_action( 'widgets_init', 'zorkish_widgets_init' );
 
