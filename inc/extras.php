@@ -15,6 +15,9 @@ function zorkish_body_classes( $classes ) {
   if ( is_multi_author() ) {
     $classes[] = 'group-blog';
   }
+  
+  if('full' == get_post_meta( get_the_ID(), 'display', true))
+    $classes[] = 'zk-full';
 
   return $classes;
 }

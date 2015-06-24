@@ -32,6 +32,11 @@ a {
 .entry-title > a {
   text-decoration: none;
   color: #232323;
+  
+  &:focus {
+    color: #498B0C;
+    outline: 0;
+  }
 }
 
 .tags-links {

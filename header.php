@@ -1,10 +1,9 @@
 <?php
 /**
-The header for our theme.
-Displays all of the <head> section and everything up till <div id="content">
+The header for our theme. Displays all of the <head> section and everything up
+til <div id="content">.
 @package Zorkish
 */
-
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

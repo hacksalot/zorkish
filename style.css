@@ -455,6 +455,9 @@ a {
 .entry-title > a {
   text-decoration: none;
   color: #232323; }
+  .entry-title > a:focus {
+    color: #498B0C;
+    outline: 0; }
 
 .tags-links > a {
   border: 1px solid #ABABAB;
@@ -656,7 +659,7 @@ a {
 .hentry {
   margin: 0 0 1.5em; }
 
-.home .hentry, .archive .hentry {
+.home .hentry, .archive .hentry, .search .hentry {
   width: 98%;
   height: 250px;
   margin: 1% 0 0 1%;
@@ -687,6 +690,27 @@ a {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.site-info {
+  color: #E8C1C1; }
+
+.zk-full #masthead {
+  padding: 0.25em; }
+.zk-full .site-logo {
+  width: 100px; }
+.zk-full #content {
+  max-width: 100%;
+  padding: 0; }
+.zk-full header.entry-header {
+  background-color: #000;
+  color: #fff;
+  padding: 8em 0; }
+  .zk-full header.entry-header h1, .zk-full header.entry-header .entry-meta {
+    margin: 0 auto;
+    max-width: 900px; }
+.zk-full .entry-content, .zk-full .entry-footer, .zk-full .post-navigation, .zk-full #comments {
+  max-width: 900px;
+  margin: 0 auto; }
 
 /*--------------------------------------------------------------
 ## Asides
@@ -775,19 +799,19 @@ object {
 # Responsive
 --------------------------------------------------------------*/
 @media screen and (min-width: 640px) {
-  .home .hentry, .archive .hentry {
+  .home .hentry, .archive .hentry, .search .hentry {
     width: 48.5%;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1024px) {
-  .home .hentry, .archive .hentry {
+  .home .hentry, .archive .hentry, .search .hentry {
     width: 32%;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1200px) {
-  .home .hentry, .archive .hentry {
+  .home .hentry, .archive .hentry, .search .hentry {
     width: 23.75%;
     margin: 1% 0 0 1%; } }
 @media screen and (min-width: 1600px) {
-  .home .hentry, .archive .hentry {
+  .home .hentry, .archive .hentry, .search .hentry {
     width: 18.8%;
     margin: 1% 0 0 1%; } }
 

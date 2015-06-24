@@ -1,27 +1,35 @@
 @media screen and (min-width: 640px) {
-  .home .hentry, .archive .hentry {
-    width: 48.5%;
-    margin: 1% 0 0 1%;
+  .home, .archive, .search {
+    .hentry {
+      width: 48.5%;
+      margin: 1% 0 0 1%;
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .home .hentry, .archive .hentry {
-    width: 32%;
-    margin: 1% 0 0 1%;
+  .home, .archive, .search {
+    .hentry {
+      width: 32%;
+      margin: 1% 0 0 1%;
+    }
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .home .hentry, .archive .hentry {
-    width: 23.75%;
-    margin: 1% 0 0 1%;
+  .home, .archive, .search {
+    .hentry {
+      width: 23.75%;
+      margin: 1% 0 0 1%;
+    }
   }
 }
 
 @media screen and (min-width: 1600px) {
-  .home .hentry, .archive .hentry {
-    width: 18.8%;
-    margin: 1% 0 0 1%;
+  .home, .archive, .search {
+    .hentry {
+      width: 18.8%;
+      margin: 1% 0 0 1%;
+    }
   }
 }
