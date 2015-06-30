@@ -2,18 +2,18 @@ html {
   box-sizing: border-box;
 }
 
-// Inherit box-sizing to make it easier to change the property for components 
+// Inherit box-sizing to make it easier to change the property for components
 // that leverage other behavior.
 // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 *,
 *:before,
-*:after { 
+*:after {
   box-sizing: inherit;
 }
 
 body {
   // Fallback for when there is no custom background color defined.
-  background: $color__background-body; 
+  background: $color__background-body;
 }
 
 #main {
@@ -25,6 +25,7 @@ body {
 #masthead {
   //background-color: $color__background-header;
   padding: 1em;
+  position: relative;
 }
 
 blockquote, q {
@@ -46,7 +47,7 @@ hr {
 
 // Automatically hide the site-title if site-logo is added
 // Note: you can replace the important tag with more specific selector
-body.has-site-logo { 
+body.has-site-logo {
   .site-title, .site-description {
     display: none !important;
   }
@@ -65,4 +66,3 @@ img {
   padding: 1em;
   background-color: $color__background-header;
 }
-

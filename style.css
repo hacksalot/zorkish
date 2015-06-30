@@ -231,7 +231,7 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: "Noto Serif", serif;
+  font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Calibri, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
@@ -317,7 +317,8 @@ body {
   width: 100%; }
 
 #masthead {
-  padding: 1em; }
+  padding: 1em;
+  position: relative; }
 
 blockquote, q {
   quotes: "" ""; }
@@ -399,6 +400,13 @@ input[type="submit"] {
     border-color: #aaa #bbb #bbb;
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
+button.menu-toggle {
+  border: none;
+  background-color: #2C2C2C;
+  text-shadow: none;
+  color: #fff;
+  box-shadow: none; }
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -440,8 +448,6 @@ a {
     color: purple; }
   a:hover, a:focus, a:active {
     color: midnightblue; }
-  a:focus {
-    outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
 
@@ -456,7 +462,7 @@ a {
   text-decoration: none;
   color: #232323; }
   .entry-title > a:focus {
-    color: #498B0C;
+    color: #B55858;
     outline: 0; }
 
 .tags-links > a {
@@ -489,7 +495,6 @@ a {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-  clear: both;
   display: block;
   float: left; }
   .main-navigation ul {
@@ -557,8 +562,18 @@ a {
 
 #site-navigation {
   position: absolute;
-  left: 400px;
-  top: 90px; }
+  right: 20px;
+  bottom: 20px; }
+
+#site-navigation li {
+  border: none;
+  background-color: #2C2C2C;
+  text-shadow: none;
+  color: #fff;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 0 3px;
+  font-size: 13px; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -659,6 +674,15 @@ a {
 .hentry {
   margin: 0 0 1.5em; }
 
+.single .site-logo, .page .site-logo, .archive .site-logo {
+  width: 120px; }
+
+.site-logo-link {
+  display: inline-block; }
+
+.site-branding {
+  display: inline-block; }
+
 .home .hentry, .archive .hentry, .search .hentry {
   width: 98%;
   height: 250px;
@@ -667,12 +691,10 @@ a {
   overflow: hidden; }
 
 .single #content, .page #content {
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
   padding-left: 1em;
   padding-right: 1em; }
-.single .hentry, .page .hentry {
-  font-size: 1.25em; }
 
 .byline,
 .updated:not(.published) {
@@ -697,7 +719,7 @@ a {
 .zk-full #masthead {
   padding: 0.25em; }
 .zk-full .site-logo {
-  width: 100px; }
+  width: 120px; }
 .zk-full #content {
   max-width: 100%;
   padding: 0; }

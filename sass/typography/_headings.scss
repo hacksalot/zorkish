@@ -1,3 +1,4 @@
+// Auto-clear headings
 h1, h2, h3, h4, h5, h6 {
   clear: both;
 }
@@ -22,10 +23,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// All entry titles regardless of size have the same relative line-height
 .entry-title {
   line-height: 1.25;
 }
 
+// Add a gold background for page headers on archive pages
 .archive .page-header {
   background-color: gold;
   padding-left: 1em;

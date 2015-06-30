@@ -7,3 +7,14 @@
 ## Menus
 --------------------------------------------------------------*/
 @import "menus";
+
+#site-navigation li {
+  border: none;
+  background-color: #2C2C2C;
+  text-shadow: none;
+  color: #fff;
+  box-shadow: none;
+  border-radius: 3px;
+  padding: 0 3px;
+  font-size: 13px;
+}
