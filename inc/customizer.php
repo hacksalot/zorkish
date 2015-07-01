@@ -64,7 +64,10 @@ function zorkish_customize_register( $wp_customize ) {
   create_color_setting( $wp_customize, 'footer_color', 'Footer Color', '#232323');
   create_color_setting( $wp_customize, 'header_byline_color', 'Byline Color', '#DDAE4F');
 
-  if ( !function_exists( 'jetpack_the_site_logo' )) {
+  // If Jetpack isn't installed, display the custom logo uploader. ALSO display
+  // it if we have a 'zorkish-logo' theme mod, to handle the case where the
+  // user adds a custom logo and later installs Jetpack.
+  if ( !function_exists('jetpack_the_site_logo') || get_theme_mod('zorkish-logo')) {
     $wp_customize->add_section( 'zorkish_logo_section' , array(
         'title'       => __( 'Logo', 'zorkish' ),
         'priority'    => 30,
