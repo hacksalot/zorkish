@@ -63,6 +63,20 @@ function zorkish_customize_register( $wp_customize ) {
   create_color_setting( $wp_customize, 'header_color', 'Header Color', '#232323');
   create_color_setting( $wp_customize, 'footer_color', 'Footer Color', '#232323');
   create_color_setting( $wp_customize, 'header_byline_color', 'Byline Color', '#DDAE4F');
+
+  if ( !function_exists( 'jetpack_the_site_logo' )) {
+    $wp_customize->add_section( 'zorkish_logo_section' , array(
+        'title'       => __( 'Logo', 'zorkish' ),
+        'priority'    => 30,
+        'description' => 'Upload a logo to replace the default site name and description in the header',
+    ) );
+    $wp_customize->add_setting( 'zorkish_logo' );
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zorkish_logo', array(
+      'label'    => __( 'Logo', 'zorkish' ),
+      'section'  => 'zorkish_logo_section',
+      'settings' => 'zorkish_logo',
+    )));
+  }
 }
 add_action( 'customize_register', 'zorkish_customize_register' );
 

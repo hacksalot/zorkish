@@ -19,6 +19,11 @@ function zorkish_body_classes( $classes ) {
   if('full' == get_post_meta( get_the_ID(), 'display', true))
     $classes[] = 'zk-full';
 
+  if( (!function_exists( 'jetpack_the_site_logo' ) || !jetpack_has_site_logo())
+      && get_theme_mod( 'zorkish_logo' )) {
+    $classes[] = 'has-site-logo';
+  }
+
   return $classes;
 }
 add_filter( 'body_class', 'zorkish_body_classes' );
