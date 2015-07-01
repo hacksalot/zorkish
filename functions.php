@@ -146,6 +146,15 @@ function zorkish_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'zorkish_excerpt_length', 999 );
 
 /**
+Enqueue stylesheet for Google Fonts
+*/
+function zorkish_add_google_fonts() {
+  wp_register_style('zorkish-googleFonts', 'http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,700italic,400,700|Life+Savers:400,700');
+  wp_enqueue_style( 'zorkish-googleFonts');
+}
+add_action('wp_print_styles', 'zorkish_add_google_fonts');
+
+/**
 Implement the Custom Header feature.
 */
 require get_template_directory() . '/inc/custom-header.php';
