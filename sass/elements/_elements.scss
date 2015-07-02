@@ -48,9 +48,9 @@ hr {
 // Automatically hide the site-title if site-logo is added
 // Note: you can replace the important tag with more specific selector
 body.has-site-logo {
-  .site-title, .site-description {
-    display: none !important;
-  }
+  // .site-title, .site-description {
+  //   display: none !important;
+  // }
 }
 
 .alert {
@@ -58,8 +58,8 @@ body.has-site-logo {
 }
 
 .alert.alert-info {
-  background-color: #B8DEFF;
-  color: #153857;
+  background-color: #CEE8FF;
+  color: #447FB3;
 }
 
 .alert.alert-warn {
@@ -68,7 +68,7 @@ body.has-site-logo {
 }
 
 .alert.alert-good {
-  background-color: #DDFCC4;
+  background-color: #DDF2CC;
   color: #3E8902;
 }
 
