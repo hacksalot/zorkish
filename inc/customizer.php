@@ -64,22 +64,37 @@ function zorkish_customize_register( $wp_customize ) {
   create_color_setting( $wp_customize, 'footer_color', 'Footer Color', '#232323');
   create_color_setting( $wp_customize, 'header_byline_color', 'Byline Color', '#DDAE4F');
 
-  // If Jetpack isn't installed, display the custom logo uploader. ALSO display
-  // it if we have a 'zorkish-logo' theme mod, to handle the case where the
-  // user adds a custom logo and later installs Jetpack.
-  if ( !function_exists('jetpack_the_site_logo') || get_theme_mod('zorkish-logo')) {
-    $wp_customize->add_section( 'zorkish_logo_section' , array(
-        'title'       => __( 'Logo', 'zorkish' ),
-        'priority'    => 30,
-        'description' => 'Upload a logo to replace the default site name and description in the header',
-    ) );
+  // Remember whether Jetpack Site Logo is present
+  $site_logo_active = function_exists('jetpack_the_site_logo');
+
+  // Add a section for site logo customization. This is in additions
+  // to whatever Jetpack might add (if installed).
+  $wp_customize->add_section( 'zorkish_logo_section' , array(
+      'title'       => __( ($site_logo_active ? 'Inner Logo' : 'Site Logo'), 'zorkish' ),
+      'priority'    => 30,
+      'description' => ($site_logo_active ? 'Specify a logo to use on inner pages' : 'Upload a logo to replace the default site name and description in the header'),
+  ) );
+
+  // If Jetpack isn't installed, display the custom logo uploader.
+  // ALSO display it if we have a 'zorkish-logo' theme mod, to handle
+  // the user adding a custom logo and later installing Jetpack.
+  if ( !$site_logo_active || get_theme_mod('zorkish-logo')) {
     $wp_customize->add_setting( 'zorkish_logo' );
-    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zorkish_logo', array(
-      'label'    => __( 'Logo', 'zorkish' ),
-      'section'  => 'zorkish_logo_section',
-      'settings' => 'zorkish_logo',
+    $wp_customize->add_control(
+      new WP_Customize_Image_Control( $wp_customize, 'zorkish_logo', array(
+        'label'    => __( 'Logo', 'zorkish' ),
+        'section'  => 'zorkish_logo_section',
+        'settings' => 'zorkish_logo',
     )));
   }
+
+  // Add a setting for the site's inner logo
+  $wp_customize->add_setting( 'zorkish_inner_logo' );
+  $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'zorkish_inner_logo', array(
+    'label'    => __( 'Inner Logo', 'zorkish' ),
+    'section'  => 'zorkish_logo_section',
+    'settings' => 'zorkish_inner_logo',
+  )));
 }
 add_action( 'customize_register', 'zorkish_customize_register' );
 

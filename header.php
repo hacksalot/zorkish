@@ -23,10 +23,15 @@ til <div id="content">.
     <div class="site-branding">
 
       <?
-      if ( function_exists( 'jetpack_the_site_logo' ) && jetpack_has_site_logo() ) {
+      if( get_theme_mod( 'zorkish_inner_logo' ) && !is_home() ) : ?>
+        <div class='site-logo'>
+          <a href='<? echo esc_url( home_url( '/' ) ); ?>' title='<? echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
+            <img src='<? echo esc_url( get_theme_mod( 'zorkish_inner_logo' ) ); ?>' alt='<? echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+          </a>
+        </div>
+      <? elseif ( function_exists( 'jetpack_the_site_logo' ) && jetpack_has_site_logo() ) :
         jetpack_the_site_logo();
-      }
-      else if (get_theme_mod( 'zorkish_logo' ) ) : ?>
+      elseif (get_theme_mod( 'zorkish_logo' ) ) : ?>
         <div class='site-logo'>
           <a href='<? echo esc_url( home_url( '/' ) ); ?>' title='<? echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
             <img src='<? echo esc_url( get_theme_mod( 'zorkish_logo' ) ); ?>' alt='<? echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
