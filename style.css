@@ -334,6 +334,25 @@ hr {
 body.has-site-logo .site-title, body.has-site-logo .site-description {
   display: none !important; }
 
+.alert {
+  padding: 10px; }
+
+.alert.alert-info {
+  background-color: #B8DEFF;
+  color: #153857; }
+
+.alert.alert-warn {
+  background-color: #F9EDB1;
+  color: #5C511A; }
+
+.alert.alert-good {
+  background-color: #DDFCC4;
+  color: #3E8902; }
+
+.alert.alert-fail {
+  background-color: #FFD9D5;
+  color: #8E3F16; }
+
 ul, ol {
   margin: 0 0 1.5em 1em; }
 
