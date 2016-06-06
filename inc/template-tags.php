@@ -5,67 +5,6 @@ Eventually, some of the functionality here could be replaced by core features.
 @package Zorkish
 */
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
-
-  /**
-  Display navigation to next/previous set of posts when applicable.
-  @todo Remove this function when WordPress 4.3 is released.
-  */
-  function the_posts_navigation() {
-
-    // Don't print empty markup if there's only one page.
-    if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-      return;
-    }
-    ?>
-    <nav class="navigation posts-navigation" role="navigation">
-      <h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'zorkish' ); ?></h2>
-      <div class="nav-links">
-
-        <?php if ( get_next_posts_link() ) : ?>
-        <div class="nav-previous"><?php next_posts_link( esc_html__( 'Older posts', 'zorkish' ) ); ?></div>
-        <?php endif; ?>
-
-        <?php if ( get_previous_posts_link() ) : ?>
-        <div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'zorkish' ) ); ?></div>
-        <?php endif; ?>
-
-      </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
-    <?php
-  }
-
-endif;
-
-if ( ! function_exists( 'the_post_navigation' ) ) :
-
-  /**
-  Display navigation to next/previous post when applicable.
-  @todo Remove this function when WordPress 4.3 is released.
-  */
-  function the_post_navigation() {
-    // Don't print empty markup if there's nowhere to navigate.
-    $previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-    $next     = get_adjacent_post( false, '', false );
-
-    if ( ! $next && ! $previous ) {
-      return;
-    }
-    ?>
-    <nav class="navigation post-navigation" role="navigation">
-      <h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'zorkish' ); ?></h2>
-      <div class="nav-links">
-        <?php
-          previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
-          next_post_link( '<div class="nav-next">%link</div>', '%title' );
-        ?>
-      </div><!-- .nav-links -->
-    </nav><!-- .navigation -->
-    <?php
-  }
-
-endif;
-
 if ( ! function_exists( 'zorkish_posted_on' ) ) :
 
   /**
@@ -73,9 +12,9 @@ if ( ! function_exists( 'zorkish_posted_on' ) ) :
   */
   function zorkish_posted_on() {
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+    /*hacksalot: Disable post-modified date if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
       $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-    }
+    }*/
 
     $time_string = sprintf( $time_string,
       esc_attr( get_the_date( 'c' ) ),
@@ -84,9 +23,17 @@ if ( ! function_exists( 'zorkish_posted_on' ) ) :
       esc_html( get_the_modified_date() )
     );
 
+    $posted_in = "";
+    $categories_list = get_the_category_list( __( ', ', 'zorkish' ) );
+    if ( $categories_list ) { //&& zorkish_categorized_blog() ) {
+      //printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'zorkish' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+      $posted_in = ' in ' . $categories_list;
+    }
+
     $posted_on = sprintf(
-      esc_html_x( 'Posted on %s', 'post date', 'zorkish' ),
-      '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+      esc_html_x( 'Posted on %s%s', 'post date', 'zorkish' ),
+      '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>',
+      $posted_in
     );
 
     $byline = sprintf(

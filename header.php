@@ -11,13 +11,14 @@ til <div id="content">.
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<? // <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic|Merriweather:400,400italic,700,700italic' rel='stylesheet' type='text/css'> ?>
 <? echo get_theme_mod('favicon_links'); ?>
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('night'); ?>>
 <div id="page" class="hfeed site">
-  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'zorkish' ); ?></a>
+  <? /*<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'zorkish' ); ?></a>*/ ?>
 
   <header id="masthead" class="site-header" role="banner" style="background-color: <?php echo get_theme_mod( 'header_color', '#232323' ); ?>;">
     <div class="site-branding">
@@ -47,7 +48,7 @@ til <div id="content">.
       <?php endif; ?>
     </div><!-- .site-branding -->
     <nav id="site-navigation" class="main-navigation" role="navigation">
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'zorkish' ); ?></button>
+      <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'zorkish' ); ?></button> -->
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
   </header><!-- #masthead -->
